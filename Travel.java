@@ -31,6 +31,11 @@ Confirm r contains State/Zipcode
   Get address
   Get Street Number
   Get Street Name
+  Determine whether address is at the start, middle, or end of the list r
+   Start
+   Middle
+   End
+
   Remove address from r
   Output String = "SS ZZZZZ:Street Name1,Street Number1"
 Confirm r contains State/Zipcode
