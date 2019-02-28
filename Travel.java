@@ -63,12 +63,7 @@ public class Travel {
     return address;
 
    }
-   // do{
-  //  String say = "Hellow";
-   //  return (("He"));
-     //return "It's HERE";
-    
-   // }while(r.contains(zipcode));
+   
    else
     return zipcode + ":/";
  }
