@@ -28,13 +28,15 @@ travel(r, "NY 5643") --> "NY 5643:/"
 Confirm r contains State/Zipcode
  If not, return SS ZZZZZ:/
  If so,
+  Determine whether address is at the start, middle, or end of the list r
+   Start
+    The index of the first comma should be eight more than that of the first instance of the zipcode
+  *** Middle
+   End
   Get address
   Get Street Number
   Get Street Name
-  Determine whether address is at the start, middle, or end of the list r
-   Start
-   Middle
-   End
+
 
   Remove address from r
   Output String = "SS ZZZZZ:Street Name1,Street Number1"
@@ -50,20 +52,29 @@ Confirm r contains State/Zipcode
 public class Travel { 
  public static void main (String[] args) { 
   String addresses = "123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  String zipcode = "NY 56432";
-  System.out.print(travel(addresses, zipcode));
+  String zipcode = "OH 43071";
+  System.out.println(travel(addresses, zipcode));
  } 
 
  public static String travel(String r, String zipcode) {
   //Confirm zipcode is in the list r
-   if (r.contains(zipcode + '\0') && r.indexOf('\0') == r.indexOf(zipcode + 8)){
+   if (r.contains(zipcode)) {
+  //See if the address is at the beginning of the list
+    if (r.indexOf(zipcode) == r.indexOf(",") - 8)
+     System.out.println("CONFIRM ADDRESS IS AT THE START");
+   
+     /*
+     NOT SURE WHAT THIS CODE WAS FOR. MIGHT DELETE LATER
+     int comma = r.indexOf(",");
+     if (r.indexOf(zipcode) == comma - 7)
+      System.out.println(zipcode + " 11111");
+
+      System.out.println("It's here"); 
   //Get address
     int addressIndex = r.indexOf(zipcode);
-    String address = r.substring(0, (addressIndex + 8));
-    return address;
-
+    String address = r.substring(0, (addressIndex + 8));*/
+    return zipcode;
    }
-   
    else
     return zipcode + ":/";
  }
