@@ -60,9 +60,9 @@ public class Travel {
   //Confirm zipcode is in the list r
    if (r.contains(zipcode)) {
   //See if the address is at the beginning of the list
-    if (r.indexOf(zipcode) == r.indexOf(",") - 8)
+    if (r.indexOf(zipcode) == r.indexOf(",") - 8){
      System.out.println("CONFIRM ADDRESS IS AT THE START");
-   
+    }
      /*
      NOT SURE WHAT THIS CODE WAS FOR. MIGHT DELETE LATER
      int comma = r.indexOf(",");
