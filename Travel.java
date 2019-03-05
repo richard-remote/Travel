@@ -34,8 +34,9 @@ Confirm r contains State/Zipcode
    End
     The index of the zipcode should be eight less than that of the length of the list r
     Also, character at the end of the list r should not be a comma
-  Middle
-   
+   Middle
+    The zipcode is neither at the start or end of the list
+   ***
   Get address
   Get Street Number
   Get Street Name
@@ -54,15 +55,17 @@ Confirm r contains State/Zipcode
 
 public class Travel { 
  public static void main (String[] args) { 
-  String addresses = "123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
+  String addresses = "123 Main Street St. Louisville OH 43072,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
   String zipcode = "NY 56432";
   System.out.println(travel(addresses, zipcode));
   //JUST GOOFIN AROUND
  } 
 
  public static String travel(String r, String zipcode) {
+   if (zipcode.length() != 8)
+    return zipcode + ":/";
   //Confirm zipcode is in the list r
-   if (r.contains(zipcode)) {
+   else if (r.contains(zipcode)) {
   //See if the address is at the beginning of the list
     if (r.indexOf(zipcode) == r.indexOf(",") - 8){
      System.out.println("ADDRESS IS AT THE START");
@@ -71,19 +74,13 @@ public class Travel {
     else if ((r.indexOf(zipcode) == r.length() - 8) && (r.charAt(r.length() - 1) != ',')){
       System.out.println("ADDRESS IS AT THE END");
     }
-     /*
-     NOT SURE WHAT THIS CODE WAS FOR. MIGHT DELETE LATER
-     int comma = r.indexOf(",");
-     if (r.indexOf(zipcode) == comma - 7)
-      System.out.println(zipcode + " 11111");
-
-      System.out.println("It's here"); 
-  //Get address
-    int addressIndex = r.indexOf(zipcode);
-    String address = r.substring(0, (addressIndex + 8));*/
-    return "oops";
+  //The address must be in the middle of the list
+    else{
+      System.out.println("ADDRESS IS IN THE MIDDLE");
+    }
+   return "oops";      
    }
-   else{
+   else {
     System.out.println("Address is not here...");
     return zipcode + ":/";
    }
