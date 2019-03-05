@@ -33,7 +33,7 @@ Confirm r contains State/Zipcode
     The index of the first comma should be eight more than that of the first instance of the zipcode
    End
     The index of the zipcode should be eight less than that of the length of the list r
-    ***Also, character at the end of the list r should not be a comma
+    Also, character at the end of the list r should not be a comma
   Middle
    
   Get address
@@ -54,8 +54,8 @@ Confirm r contains State/Zipcode
 
 public class Travel { 
  public static void main (String[] args) { 
-  String addresses = "123 Main Street St. Louisville OH 43072,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  String zipcode = "OH 43072";
+  String addresses = "123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
+  String zipcode = "NY 56432";
   System.out.println(travel(addresses, zipcode));
   //JUST GOOFIN AROUND
  } 
@@ -68,7 +68,7 @@ public class Travel {
      System.out.println("ADDRESS IS AT THE START");
     }
   //See if the address is at the end of the list
-    else if (r.indexOf(zipcode) == r.length() - 8){
+    else if ((r.indexOf(zipcode) == r.length() - 8) && (r.charAt(r.length() - 1) != ',')){
       System.out.println("ADDRESS IS AT THE END");
     }
      /*
