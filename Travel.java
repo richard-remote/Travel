@@ -62,6 +62,7 @@ public class Travel {
  } 
 
  public static String travel(String r, String zipcode) {
+  //Confirm zipcode is of proper length 
    if (zipcode.length() != 8)
     return zipcode + ":/";
   //Confirm zipcode is in the list r
@@ -78,7 +79,7 @@ public class Travel {
     else{
       System.out.println("ADDRESS IS IN THE MIDDLE");
     }
-   return "oops";      
+   return zipcode + ":::::";      
    }
    else {
     System.out.println("Address is not here...");
