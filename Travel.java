@@ -31,8 +31,10 @@ Confirm r contains State/Zipcode
   Determine whether address is at the start, middle, or end of the list r
    Start
     The index of the first comma should be eight more than that of the first instance of the zipcode
-  *** Middle
-   End
+  *** End
+    The character after the zipcode should be a null terminator
+  Middle
+   
   Get address
   Get Street Number
   Get Street Name
