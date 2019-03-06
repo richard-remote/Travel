@@ -37,9 +37,21 @@ Confirm r contains State/Zipcode
    Middle
     The zipcode is neither at the start or end of the list
    ***
+   
   Get address
+   Start
+    Use indexof method to find first comma
+    Take a substring from 0 to the comma
+   End
+    Lastindexof to find the last comma 
+    Take a substring from the comma to r.length() - 1
+   Middle 
+    Take a substring from 0 to the zipcode
+    Recycle code from End 
+     
   Get Street Number
   Get Street Name
+
 
 
   Remove address from r
