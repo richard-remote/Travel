@@ -36,22 +36,23 @@ Confirm r contains State/Zipcode
     Also, character at the end of the list r should not be a comma
    Middle
     The zipcode is neither at the start or end of the list
-   ***
    
   Get address
-   Start
+   Start 1
     Use indexof method to find first comma
     Take a substring from 0 to the comma
-   End
+   ***
+   End 2
     Lastindexof to find the last comma 
     Take a substring from the comma to r.length() - 1
-   Middle 
+   Middle 3 
     Take a substring from 0 to the zipcode
     Recycle code from End 
      
   Get Street Number
   Get Street Name
-
+   Append each to two strings for street listOfStreetNumbers and listOfStreetNames
+   Loop this until the zipcode is no longer found in list r
 
 
   Remove address from r
@@ -68,7 +69,7 @@ Confirm r contains State/Zipcode
 public class Travel { 
  public static void main (String[] args) { 
   String addresses = "123 Main Street St. Louisville OH 43072,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  String zipcode = "NY 56432";
+  String zipcode = "OH 43072";
   System.out.println(travel(addresses, zipcode));
   //JUST GOOFIN AROUND
  } 
@@ -78,10 +79,12 @@ public class Travel {
    if (zipcode.length() != 8)
     return zipcode + ":/";
   //Confirm zipcode is in the list r
-   else if (r.contains(zipcode)) {
+   if (r.contains(zipcode)) {
+    String address = "";
   //See if the address is at the beginning of the list
     if (r.indexOf(zipcode) == r.indexOf(",") - 8){
-     System.out.println("ADDRESS IS AT THE START");
+      address = getAddress(1, r, zipcode);
+      System.out.println(address);
     }
   //See if the address is at the end of the list
     else if ((r.indexOf(zipcode) == r.length() - 8) && (r.charAt(r.length() - 1) != ',')){
@@ -97,5 +100,17 @@ public class Travel {
     System.out.println("Address is not here...");
     return zipcode + ":/";
    }
+ }
+  
+ public static String getAddress (int option, String list, String zipcode){
+  String address = "";
+  int commaIndex = 0;
+   
+   switch (option){
+    case(1): commaIndex = list.indexOf(",");
+             address = list.substring(0, commaIndex);
+   }
+  
+  return address;
  }
 }
