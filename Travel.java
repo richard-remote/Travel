@@ -102,10 +102,7 @@ public class Travel {
     return zipcode + ":/";
    }
  }
-      /*
-      Lastindexof to find the last comma 
-    Take a substring from the comma to r.length() - 1
-    */
+
  public static String getAddress (int option, String list, String zipcode){
   String address = "";
   int commaIndex = 0;
@@ -114,10 +111,10 @@ public class Travel {
     case(1): commaIndex = list.indexOf(",");
              address = list.substring(0, commaIndex);
              break;
+    case(2): //Code to extract substring from the start of the list to the zipcode
 
-    case(2): commaIndex = list.lastIndexOf(",");
+    case(3): commaIndex = list.lastIndexOf(",");
              address = list.substring(++commaIndex, list.length());
-
    }
   
   return address;
