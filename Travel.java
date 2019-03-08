@@ -88,7 +88,7 @@ public class Travel {
     }
   //See if the address is at the end of the list
     else if ((r.indexOf(zipcode) == r.length() - 8) && (r.charAt(r.length() - 1) != ',')){
-      address = getAddress(2, r, zipcode);
+      address = getAddress(3, r, zipcode);
       System.out.println(address);
     }
   //The address must be in the middle of the list
