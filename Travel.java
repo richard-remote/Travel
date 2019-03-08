@@ -42,28 +42,28 @@ Confirm r contains State/Zipcode
     Use indexof method to find first comma
     Take a substring from 0 to the comma
    ***
+  Extract the address
    End 2
     Lastindexof to find the last comma 
     Take a substring from the comma to r.length() - 1
    Middle 3 
     Take a substring from 0 to the zipcode
     Recycle code from End 
-     
   Get Street Number
+   //
   Get Street Name
-   Append each to two strings for street listOfStreetNumbers and listOfStreetNames
-   Loop this until the zipcode is no longer found in list r
-
-
+   //
+  Append each to two strings for street listOfStreetNumbers and listOfStreetNames
+   //
+  Loop this until the zipcode is no longer found in list r
+   //
   Remove address from r
+   //
   Output String = "SS ZZZZZ:Street Name1,Street Number1"
-Confirm r contains State/Zipcode
- If so,
-  Get address
-  Get Street Number
-  Get Street Name
-  Remove address from r
-  Output String = "SS ZZZZZ:Street Name1,(add Street Name2)/StreetNumber1,(add Street Name2)"
+   //
+  While r contains State/Zipcode
+   Return Output String
+  //
 */
 
 public class Travel { 
