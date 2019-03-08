@@ -43,10 +43,10 @@ Confirm r contains State/Zipcode
     Take a substring from 0 to the comma
    ***
   Extract the address
-   End 2
+   End 3
     Lastindexof to find the last comma 
     Take a substring from the comma to r.length() - 1
-   Middle 3 
+   Middle 2 
     Take a substring from 0 to the zipcode
     Recycle code from End 
   Get Street Number
@@ -69,7 +69,7 @@ Confirm r contains State/Zipcode
 public class Travel { 
  public static void main (String[] args) { 
   String addresses = "123 Main Street St. Louisville OH 43072,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  String zipcode = "NY 56432";
+  String zipcode = "OH 43072";
   System.out.println(travel(addresses, zipcode));
   //JUST GOOFIN AROUND
  } 
@@ -93,7 +93,8 @@ public class Travel {
     }
   //The address must be in the middle of the list
     else{
-      System.out.println("ADDRESS IS IN THE MIDDLE");
+      address = getAddress(2, r, zipcode);
+      System.out.println(address);
     }
    return zipcode + ":::::";      
    }
@@ -111,7 +112,8 @@ public class Travel {
     case(1): commaIndex = list.indexOf(",");
              address = list.substring(0, commaIndex);
              break;
-    case(2): //Code to extract substring from the start of the list to the zipcode
+
+    case(2): list = list.substring(0, list.indexOf(zipcode) + 8);
 
     case(3): commaIndex = list.lastIndexOf(",");
              address = list.substring(++commaIndex, list.length());
