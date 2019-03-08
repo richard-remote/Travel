@@ -69,7 +69,7 @@ Confirm r contains State/Zipcode
 public class Travel { 
  public static void main (String[] args) { 
   String addresses = "123 Main Street St. Louisville OH 43072,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  String zipcode = "NY 56432";
+  String zipcode = "OH 43072";
   System.out.println(travel(addresses, zipcode));
   //JUST GOOFIN AROUND
  } 
@@ -112,9 +112,8 @@ public class Travel {
     case(1): commaIndex = list.indexOf(",");
              address = list.substring(0, commaIndex);
              break;
-             
-    case(2): //Code to extract substring from the start of the list to the zipcode
-             list = list.substring(0, list.indexOf(zipcode) + 8);
+
+    case(2): list = list.substring(0, list.indexOf(zipcode) + 8);
 
     case(3): commaIndex = list.lastIndexOf(",");
              address = list.substring(++commaIndex, list.length());
