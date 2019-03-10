@@ -48,9 +48,11 @@ Confirm r contains State/Zipcode
    Middle 2 
     Take a substring from 0 to the zipcode
     Recycle code from End 
-*****    
+
   Get Street Number
-   //Substring from the start of address to the first whitespace character
+   Substring from the start of address to the first whitespace character
+   *****    
+   Remove the street number from the address
   Get Street Name
    //
   Append each to two strings for street listOfStreetNumbers and listOfStreetNames
@@ -95,10 +97,14 @@ public class Travel {
     else{
       address = getAddress(2, r, zipcode);
     }
-    
-  //Get the address number of the address
-    String addressNumber = getAddressNumber(address);
-    System.out.println(addressNumber);
+
+  //Get the street number of the address
+    String streetNumber = getStreetNumber(address);
+    System.out.println(streetNumber);
+
+    System.out.println(address.substring(streetNumber.length() + 1));
+
+
    return zipcode + "::::: FINAL LIST SOON COME";      
    }
    else {
@@ -125,14 +131,13 @@ public class Travel {
   return address;
  }
 
-//Substring from the start of address to the first whitespace character
- public static String getAddressNumber (String address){
-  String addressNumber = "";
+ public static String getStreetNumber (String address){
+  String streetNumber = "";
   int spaceIndex = 0;
   
   spaceIndex = address.indexOf(" ");
-  addressNumber = address.substring(0, spaceIndex);
+  streetNumber = address.substring(0, spaceIndex);
 
-  return addressNumber;
+  return streetNumber;
  }
 }
