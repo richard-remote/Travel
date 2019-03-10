@@ -48,11 +48,11 @@ Confirm r contains State/Zipcode
    Middle 2 
     Take a substring from 0 to the zipcode
     Recycle code from End 
-
+*****    
+  Remove address from list r
   Get Street Number
    Substring from the start of address to the first whitespace character
-   *****    
-   Remove the street number from the address
+   
   Get Street Name
    //
   Append each to two strings for street listOfStreetNumbers and listOfStreetNames
