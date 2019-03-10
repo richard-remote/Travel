@@ -49,7 +49,17 @@ Confirm r contains State/Zipcode
     Take a substring from 0 to the zipcode
     Recycle code from End 
 *****    
-  Remove address from list r
+  Update list r without the address
+   Start
+    Substring starting at the end of the address + 1
+   End
+    Substring from 0 to the start of the address
+   Middle
+    Create two Strings
+     One with substring from 0 to start of address
+     Another with the end of the address to the end of the list r
+     Combine both together
+
   Get Street Number
    Substring from the start of address to the first whitespace character
    
@@ -97,6 +107,9 @@ public class Travel {
     else{
       address = getAddress(2, r, zipcode);
     }
+
+  //TEST: Display the list r without the address
+    System.out.println(r.substring(address.length() + 1));
 
   //Get the street number of the address
     String streetNumber = getStreetNumber(address);
