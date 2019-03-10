@@ -41,7 +41,6 @@ Confirm r contains State/Zipcode
    Start 1
     Use indexof method to find first comma
     Take a substring from 0 to the comma
-   ***
   Extract the address
    End 3
     Lastindexof to find the last comma 
@@ -49,8 +48,9 @@ Confirm r contains State/Zipcode
    Middle 2 
     Take a substring from 0 to the zipcode
     Recycle code from End 
+*****    
   Get Street Number
-   //
+   //Substring from the start of address to the first whitespace character
   Get Street Name
    //
   Append each to two strings for street listOfStreetNumbers and listOfStreetNames
@@ -78,25 +78,28 @@ public class Travel {
   //Confirm zipcode is of proper length 
    if (zipcode.length() != 8)
     return zipcode + ":/";
+
   //Confirm zipcode is in the list r
    if (r.contains(zipcode)) {
     String address = "";
+
   //See if the address is at the beginning of the list
     if (r.indexOf(zipcode) == r.indexOf(",") - 8){
       address = getAddress(1, r, zipcode);
-      System.out.println(address);
     }
   //See if the address is at the end of the list
     else if ((r.indexOf(zipcode) == r.length() - 8) && (r.charAt(r.length() - 1) != ',')){
       address = getAddress(3, r, zipcode);
-      System.out.println(address);
     }
   //The address must be in the middle of the list
     else{
       address = getAddress(2, r, zipcode);
-      System.out.println(address);
     }
-   return zipcode + ":::::";      
+    
+  //Get the address number of the address
+    String addressNumber = getAddressNumber(address);
+    System.out.println(addressNumber);
+   return zipcode + "::::: FINAL LIST SOON COME";      
    }
    else {
     System.out.println("Address is not here...");
@@ -120,5 +123,16 @@ public class Travel {
    }
   
   return address;
+ }
+
+//Substring from the start of address to the first whitespace character
+ public static String getAddressNumber (String address){
+  String addressNumber = "";
+  int spaceIndex = 0;
+  
+  spaceIndex = address.indexOf(" ");
+  addressNumber = address.substring(0, spaceIndex);
+
+  return addressNumber;
  }
 }
