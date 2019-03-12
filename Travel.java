@@ -46,22 +46,13 @@ Confirm r contains State/Zipcode
     Lastindexof to find the last comma 
     Take a substring from the comma to r.length() - 1
     list = Substring from 0 to the instance of the address
-   *****    
     Middle 2 
-    Take a substring from 0 to the zipcode
-    Recycle code from End
-
-
-  
-   Start
-    
-   End
-    Substring from 0 to the start of the address
-   Middle
-    Create two Strings
-     One with substring from 0 to start of address
-     Another with the end of the address to the end of the list r
-     Combine both together
+     Take a substring from 0 to the zipcode
+     Recycle code from End
+     Create two Strings
+      string1 = End of the address to the end of the list r
+      string 2 = Start of the list to the start of the address
+      list = string1 + string 2
 
   Get Street Number
    Substring from the start of address to the first whitespace character
@@ -84,7 +75,7 @@ Confirm r contains State/Zipcode
 public class Travel { 
  public static void main (String[] args) { 
   String addresses = "123 Main Street St. Louisville OH 43072,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  String zipcode = "NY 56432";
+  String zipcode = "OH 43071";
   System.out.println(travel(addresses, zipcode));
   //JUST GOOFIN AROUND
  } 
@@ -110,7 +101,11 @@ public class Travel {
     }
   //See if the address is in the middle of the list and remove it
     else{
+      String beforeAddress = "", afterAddress = "";
       address = getAddress(2, r, zipcode);
+      beforeAddress = r.substring(0, (r.indexOf(address) - 1));
+      afterAddress =r.substring(r.indexOf(address) + address.length());
+      r = (beforeAddress + afterAddress);
     
     }
 
