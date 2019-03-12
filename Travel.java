@@ -53,29 +53,27 @@ Confirm r contains State/Zipcode
       string1 = End of the address to the end of the list r
       string 2 = Start of the list to the start of the address
       list = string1 + string 2
-
+  
   Get Street Number
    Substring from the start of address to the first whitespace character
-   
+  
   Get Street Name
+   Substring from the space after the street number to the space before the zipcode
+   *****    
+  Append both street number and name to the list of strings listOfStreetNumbers and listOfStreetNames
    //
-  Append each to two strings for street listOfStreetNumbers and listOfStreetNames
-   //
-  Loop this until the zipcode is no longer found in list r
-   //
-  Remove address from r
+  Loop this while the zipcode is found in list r
    //
   Output String = "SS ZZZZZ:Street Name1,Street Number1"
    //
-  While r contains State/Zipcode
-   Return Output String
+  Return Output String
   //
 */
 
 public class Travel { 
  public static void main (String[] args) { 
   String addresses = "123 Main Street St. Louisville OH 43072,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  String zipcode = "OH 43071";
+  String zipcode = "NY 56432";
   System.out.println(travel(addresses, zipcode));
   //JUST GOOFIN AROUND
  } 
@@ -109,14 +107,10 @@ public class Travel {
     
     }
 
-  //TEST: Display the list r without the address
-    System.out.println(r);
-
-  //Get the street number of the address
+  //Get the street number and street name of the address
     String streetNumber = getStreetNumber(address);
-    System.out.println(streetNumber);
-
-    System.out.println(address.substring(streetNumber.length() + 1));
+    String streetName = address.substring((streetNumber.length() + 1), (address.indexOf(zipcode) - 1));
+    System.out.println(streetName);
 
 
    return zipcode + "::::: FINAL LIST SOON COME";      
