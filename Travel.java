@@ -37,51 +37,43 @@ Confirm r contains State/Zipcode
    Middle
     The zipcode is neither at the start or end of the list
    
-  Get address
+  Get address and remove from list r
    Start 1
     Use indexof method to find first comma
     Take a substring from 0 to the comma
-  Extract the address
+    list = Substring starting at the end of the address + 1
    End 3
     Lastindexof to find the last comma 
     Take a substring from the comma to r.length() - 1
-   Middle 2 
-    Take a substring from 0 to the zipcode
-    Recycle code from End 
-*****    
-  Update list r without the address
-   Start
-    Substring starting at the end of the address + 1
-   End
-    Substring from 0 to the start of the address
-   Middle
-    Create two Strings
-     One with substring from 0 to start of address
-     Another with the end of the address to the end of the list r
-     Combine both together
-
+    list = Substring from 0 to the instance of the address
+    Middle 2 
+     Take a substring from 0 to the zipcode
+     Recycle code from End
+     Create two Strings
+      string1 = End of the address to the end of the list r
+      string 2 = Start of the list to the start of the address
+      list = string1 + string 2
+  
   Get Street Number
    Substring from the start of address to the first whitespace character
-   
+  
   Get Street Name
+   Substring from the space after the street number to the space before the zipcode
+   *****    
+  Append both street number and name to the list of strings listOfStreetNumbers and listOfStreetNames
    //
-  Append each to two strings for street listOfStreetNumbers and listOfStreetNames
-   //
-  Loop this until the zipcode is no longer found in list r
-   //
-  Remove address from r
+  Loop this while the zipcode is found in list r
    //
   Output String = "SS ZZZZZ:Street Name1,Street Number1"
    //
-  While r contains State/Zipcode
-   Return Output String
+  Return Output String
   //
 */
 
 public class Travel { 
  public static void main (String[] args) { 
   String addresses = "123 Main Street St. Louisville OH 43072,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  String zipcode = "OH 43072";
+  String zipcode = "NY 56432";
   System.out.println(travel(addresses, zipcode));
   //JUST GOOFIN AROUND
  } 
@@ -95,27 +87,30 @@ public class Travel {
    if (r.contains(zipcode)) {
     String address = "";
 
-  //See if the address is at the beginning of the list
+  //See if the address is at the beginning of the list and remove the first address
     if (r.indexOf(zipcode) == r.indexOf(",") - 8){
       address = getAddress(1, r, zipcode);
+      r = r.substring(address.length() + 1);
     }
-  //See if the address is at the end of the list
+  //See if the address is at the end of the list and remove the last address
     else if ((r.indexOf(zipcode) == r.length() - 8) && (r.charAt(r.length() - 1) != ',')){
       address = getAddress(3, r, zipcode);
+      r = r.substring(0, (r.indexOf(address) - 1));
     }
-  //The address must be in the middle of the list
+  //See if the address is in the middle of the list and remove it
     else{
+      String beforeAddress = "", afterAddress = "";
       address = getAddress(2, r, zipcode);
+      beforeAddress = r.substring(0, (r.indexOf(address) - 1));
+      afterAddress =r.substring(r.indexOf(address) + address.length());
+      r = (beforeAddress + afterAddress);
+    
     }
 
-  //TEST: Display the list r without the address
-    System.out.println(r.substring(address.length() + 1));
-
-  //Get the street number of the address
+  //Get the street number and street name of the address
     String streetNumber = getStreetNumber(address);
-    System.out.println(streetNumber);
-
-    System.out.println(address.substring(streetNumber.length() + 1));
+    String streetName = address.substring((streetNumber.length() + 1), (address.indexOf(zipcode) - 1));
+    System.out.println(streetName);
 
 
    return zipcode + "::::: FINAL LIST SOON COME";      
@@ -139,8 +134,9 @@ public class Travel {
 
     case(3): commaIndex = list.lastIndexOf(",");
              address = list.substring(++commaIndex, list.length());
+
    }
-  
+   
   return address;
  }
 
