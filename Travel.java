@@ -49,7 +49,7 @@ public class Travel {
 
   //Confirm zipcode is in the list r
    if (r.contains(zipcode)) //{
-     return "FOUND";
+     return "READY TO PROCEED TO THE NEXT FEATURE";
     //String address = "";
 /*
   //See if the address is at the beginning of the list and remove the first address
