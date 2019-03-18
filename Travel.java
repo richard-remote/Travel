@@ -37,21 +37,21 @@ travel(r, "NY 5643") --> "NY 5643:/"
 
 public class Travel { 
  public static void main (String[] args) { 
- // String addresses = "123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  //String zipcode = "OH 43071";
-  //System.out.println(travel(addresses, zipcode));
-  //JUST GOOFIN AROUND
+  String addresses = "123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
+  String zipcode = "OH 43071";
+  System.out.println(travel(addresses, zipcode));
  } 
-/*
+
  public static String travel(String r, String zipcode) {
   //Confirm zipcode is of proper length 
    if (zipcode.length() != 8)
     return zipcode + ":/";
 
   //Confirm zipcode is in the list r
-   if (r.contains(zipcode)) {
-    String address = "";
-
+   if (r.contains(zipcode)) //{
+     return "READY TO PROCEED TO THE NEXT FEATURE";
+    //String address = "";
+/*
   //See if the address is at the beginning of the list and remove the first address
     if (r.indexOf(zipcode) == r.indexOf(",") - 8){
       address = getAddress(1, r, zipcode);
@@ -80,6 +80,7 @@ public class Travel {
 
    return zipcode + "::::: FINAL LIST SOON COME";      
    }
+   */
    else {
     System.out.println("Address is not here...");
     return zipcode + ":/";
@@ -113,5 +114,5 @@ public class Travel {
   streetNumber = address.substring(0, spaceIndex);
 
   return streetNumber;
- }*/
+ }
 }
