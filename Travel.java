@@ -49,15 +49,16 @@ public class Travel {
     return zipcode + ":/";
 
   //Confirm zipcode is in the list r
-   if (r.contains(zipcode)) //{
-     return "READY TO PROCEED TO THE NEXT FEATURE";
-    //String address = "";
-/*
+   if (r.contains(zipcode)) {
+    String address = "";
+
   //See if the address is at the beginning of the list and remove the first address
     if (r.indexOf(zipcode) == r.indexOf(",") - 8){
       address = getAddress(1, r, zipcode);
       r = r.substring(address.length() + 1);
     }
+    return "THE ZIPCODE IS IN THE FIRST ADDRESS.\n" + address;
+   }/*
   //See if the address is at the end of the list and remove the last address
     else if ((r.indexOf(zipcode) == r.length() - 8) && (r.charAt(r.length() - 1) != ',')){
       address = getAddress(3, r, zipcode);
@@ -101,7 +102,6 @@ public class Travel {
 
     case(3): commaIndex = list.lastIndexOf(",");
              address = list.substring(++commaIndex, list.length());
-
    }
    
   return address;
