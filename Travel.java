@@ -33,13 +33,12 @@ travel(r, "OH 43071") --> "OH 43071:Main Street St. Louisville,Main Long Road St
 travel(r, "NY 56432") --> "NY 56432:High Street Pollocksville/786"
 
 travel(r, "NY 5643") --> "NY 5643:/"
-
 */
 
 public class Travel { 
  public static void main (String[] args) { 
   String addresses = "123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  String zipcode = "OH 43071";
+  String zipcode = "NY 56432";
   System.out.println(travel(addresses, zipcode));
  } 
 
@@ -52,18 +51,23 @@ public class Travel {
    if (r.contains(zipcode)) {
     String address = "";
 
-  //See if the address is at the beginning of the list and remove the first address
+  //See if the address is at the beginning of the list ///and remove the first address
     if (r.indexOf(zipcode) == r.indexOf(",") - 8){
       address = getAddress(1, r, zipcode);
-      r = r.substring(address.length() + 1);
+      return "THE ZIPCODE IS IN THE FIRST ADDRESS.\n" + address;
+      //r = r.substring(address.length() + 1);
     }
-    return "THE ZIPCODE IS IN THE FIRST ADDRESS.\n" + address;
-   }/*
-  //See if the address is at the end of the list and remove the last address
+
+  //See if the address is at the end of the list /////and remove the last address
     else if ((r.indexOf(zipcode) == r.length() - 8) && (r.charAt(r.length() - 1) != ',')){
       address = getAddress(3, r, zipcode);
-      r = r.substring(0, (r.indexOf(address) - 1));
+      return "THE ZIPCODE IS IN THE LAST ADDRESS.\n" + address;
+      //r = r.substring(0, (r.indexOf(address) - 1));
     }
+
+    return "STRING TYPE RETURN VALUE";}
+
+    /*
   //See if the address is in the middle of the list and remove it
     else{
       String beforeAddress = "", afterAddress = "";
@@ -87,7 +91,8 @@ public class Travel {
     System.out.println("Address is not here...");
     return zipcode + ":/";
    }
- }
+  }
+ 
 
  public static String getAddress (int option, String list, String zipcode){
   String address = "";
