@@ -54,10 +54,8 @@ public class Travel {
   //See if the address is at the beginning of the list and remove the first address
     if (r.indexOf(zipcode) == r.indexOf(",") - 8){
      address = getAddress(1, r, zipcode);
-     System.out.println("Old list:" + r);
      r = r.substring(address.length() + 1);
-     System.out.println("New list:" + r);
-    return "THE ZIPCODE IS IN THE FIRST ADDRESS.\n" + address;
+     return "THE ZIPCODE IS IN THE FIRST ADDRESS.\n" + address;
     }
 
   //See if the address is at the end of the list /////and remove the last address
@@ -71,12 +69,14 @@ public class Travel {
     else {
       String beforeAddress = "", afterAddress = "";
       address = getAddress(2, r, zipcode);
-      return "THE ZIPCODE IS IN THE MIDDLE ADDRESS\n" + address;
-      /*
+
+      System.out.println("Old list:" + r);
       beforeAddress = r.substring(0, (r.indexOf(address) - 1));
       afterAddress =r.substring(r.indexOf(address) + address.length());
       r = (beforeAddress + afterAddress);
-      */
+      System.out.println("New list:" + r);
+      
+      return "THE ZIPCODE IS IN THE MIDDLE ADDRESS\n" + address;
     }
 
   }
