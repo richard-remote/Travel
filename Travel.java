@@ -37,8 +37,8 @@ travel(r, "NY 5643") --> "NY 5643:/"
 
 public class Travel { 
  public static void main (String[] args) { 
-  String addresses = "123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  String zipcode = "NY 56432";
+  String addresses = "123 Main Street St. Louisville OH 43072,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
+  String zipcode = "OH 43071";
   System.out.println(travel(addresses, zipcode));
  } 
 
@@ -65,19 +65,20 @@ public class Travel {
       //r = r.substring(0, (r.indexOf(address) - 1));
     }
 
-    return "STRING TYPE RETURN VALUE";}
-
-    /*
-  //See if the address is in the middle of the list and remove it
-    else{
+  //See if the address is in the middle of the list// and remove it
+    else {
       String beforeAddress = "", afterAddress = "";
       address = getAddress(2, r, zipcode);
+      return "THE ZIPCODE IS IN THE MIDDLE ADDRESS\n" + address;
+      /*
       beforeAddress = r.substring(0, (r.indexOf(address) - 1));
       afterAddress =r.substring(r.indexOf(address) + address.length());
       r = (beforeAddress + afterAddress);
-    
+      */
     }
 
+  }
+/*
   //Get the street number and street name of the address
     String streetNumber = getStreetNumber(address);
     String streetName = address.substring((streetNumber.length() + 1), (address.indexOf(zipcode) - 1));
