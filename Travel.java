@@ -38,7 +38,7 @@ travel(r, "NY 5643") --> "NY 5643:/"
 public class Travel { 
  public static void main (String[] args) { 
   String addresses = "123 Main Street St. Louisville OH 43072,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  String zipcode = "OH 43072";
+  String zipcode = "NY 56432";
   System.out.println(travel(addresses, zipcode));
  } 
 
@@ -58,24 +58,24 @@ public class Travel {
      return "THE ZIPCODE IS IN THE FIRST ADDRESS.\n" + address;
     }
 
-  //See if the address is at the end of the list /////and remove the last address
+  //See if the address is at the end of the list and remove the last address
     else if ((r.indexOf(zipcode) == r.length() - 8) && (r.charAt(r.length() - 1) != ',')){
       address = getAddress(3, r, zipcode);
+
+      System.out.println("Old list:" + r);
+      r = r.substring(0, (r.indexOf(address) - 1));
+      System.out.println("New list:" + r);
       return "THE ZIPCODE IS IN THE LAST ADDRESS.\n" + address;
-      //r = r.substring(0, (r.indexOf(address) - 1));
     }
 
-  //See if the address is in the middle of the list// and remove it
+  //See if the address is in the middle of the list and remove it
     else {
       String beforeAddress = "", afterAddress = "";
       address = getAddress(2, r, zipcode);
-
-      System.out.println("Old list:" + r);
       beforeAddress = r.substring(0, (r.indexOf(address) - 1));
       afterAddress =r.substring(r.indexOf(address) + address.length());
       r = (beforeAddress + afterAddress);
-      System.out.println("New list:" + r);
-      
+
       return "THE ZIPCODE IS IN THE MIDDLE ADDRESS\n" + address;
     }
 
