@@ -33,12 +33,11 @@ travel(r, "OH 43071") --> "OH 43071:Main Street St. Louisville,Main Long Road St
 travel(r, "NY 56432") --> "NY 56432:High Street Pollocksville/786"
 
 travel(r, "NY 5643") --> "NY 5643:/"
-
 */
 
 public class Travel { 
  public static void main (String[] args) { 
-  String addresses = "123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
+  String addresses = "123 Main Street St. Louisville OH 43072,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
   String zipcode = "OH 43071";
   System.out.println(travel(addresses, zipcode));
  } 
@@ -49,30 +48,37 @@ public class Travel {
     return zipcode + ":/";
 
   //Confirm zipcode is in the list r
-   if (r.contains(zipcode)) //{
-     return "READY TO PROCEED TO THE NEXT FEATURE";
-    //String address = "";
-/*
-  //See if the address is at the beginning of the list and remove the first address
+   if (r.contains(zipcode)) {
+    String address = "";
+
+  //See if the address is at the beginning of the list ///and remove the first address
     if (r.indexOf(zipcode) == r.indexOf(",") - 8){
       address = getAddress(1, r, zipcode);
-      r = r.substring(address.length() + 1);
+      return "THE ZIPCODE IS IN THE FIRST ADDRESS.\n" + address;
+      //r = r.substring(address.length() + 1);
     }
-  //See if the address is at the end of the list and remove the last address
+
+  //See if the address is at the end of the list /////and remove the last address
     else if ((r.indexOf(zipcode) == r.length() - 8) && (r.charAt(r.length() - 1) != ',')){
       address = getAddress(3, r, zipcode);
-      r = r.substring(0, (r.indexOf(address) - 1));
+      return "THE ZIPCODE IS IN THE LAST ADDRESS.\n" + address;
+      //r = r.substring(0, (r.indexOf(address) - 1));
     }
-  //See if the address is in the middle of the list and remove it
-    else{
+
+  //See if the address is in the middle of the list// and remove it
+    else {
       String beforeAddress = "", afterAddress = "";
       address = getAddress(2, r, zipcode);
+      return "THE ZIPCODE IS IN THE MIDDLE ADDRESS\n" + address;
+      /*
       beforeAddress = r.substring(0, (r.indexOf(address) - 1));
       afterAddress =r.substring(r.indexOf(address) + address.length());
       r = (beforeAddress + afterAddress);
-    
+      */
     }
 
+  }
+/*
   //Get the street number and street name of the address
     String streetNumber = getStreetNumber(address);
     String streetName = address.substring((streetNumber.length() + 1), (address.indexOf(zipcode) - 1));
@@ -86,7 +92,8 @@ public class Travel {
     System.out.println("Address is not here...");
     return zipcode + ":/";
    }
- }
+  }
+ 
 
  public static String getAddress (int option, String list, String zipcode){
   String address = "";
@@ -101,7 +108,6 @@ public class Travel {
 
     case(3): commaIndex = list.lastIndexOf(",");
              address = list.substring(++commaIndex, list.length());
-
    }
    
   return address;
