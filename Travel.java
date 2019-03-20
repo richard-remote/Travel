@@ -38,7 +38,7 @@ travel(r, "NY 5643") --> "NY 5643:/"
 public class Travel { 
  public static void main (String[] args) { 
   String addresses = "123 Main Street St. Louisville OH 43072,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  String zipcode = "OH 43071";
+  String zipcode = "OH 43072";
   System.out.println(travel(addresses, zipcode));
  } 
 
@@ -83,14 +83,13 @@ public class Travel {
       testStatement = "THE ZIPCODE IS IN THE MIDDLE ADDRESS\n" + address;
     }
 
-   //Get the street number// and street name of the address
+   //Get the street number and street name of the address
     String streetNumber = getStreetNumber(address);
-   /*
     String streetName = address.substring((streetNumber.length() + 1), (address.indexOf(zipcode) - 1));
-    System.out.println(streetName);
-    */
 
-    testStatement = testStatement + "\nThe Street Number is " + streetNumber;
+    testStatement = testStatement + "\nThe Street Number is " + streetNumber + 
+     "\nThe Street Name is " + streetName;
+
     return testStatement;    
    }
 
