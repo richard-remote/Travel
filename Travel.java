@@ -38,7 +38,7 @@ travel(r, "NY 5643") --> "NY 5643:/"
 public class Travel { 
  public static void main (String[] args) { 
   String addresses = "123 Main Street St. Louisville OH 43072,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  String zipcode = "OH 43072";
+  String zipcode = "NY 56432";
   System.out.println(travel(addresses, zipcode));
  } 
 
@@ -49,7 +49,7 @@ public class Travel {
 
   //Confirm zipcode is in the list r
    if (r.contains(zipcode)) {
-    String address = "", testStatement = "";
+    String address = "", testStatement = "", listOfStreetNumbers = "", listOfStreetNames = "";
 
   //See if the address is at the beginning of the list and remove the first address
     if (r.indexOf(zipcode) == r.indexOf(",") - 8){
@@ -89,10 +89,16 @@ public class Travel {
 
     testStatement = testStatement + "\nThe Street Number is " + streetNumber + 
      "\nThe Street Name is " + streetName;
-
+    
+   //Append the street number and street name to the new lists
+    listOfStreetNumbers = listOfStreetNumbers + streetNumber;
+    listOfStreetNames = listOfStreetNames + streetName;
+    testStatement = testStatement + "\nThe street names are " + listOfStreetNames +
+     "\nThe street numbers are " + listOfStreetNumbers;
     return testStatement;    
    }
 
+   
    else {
     System.out.println("Address is not here...");
     return zipcode + ":/";
