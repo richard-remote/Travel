@@ -1,5 +1,6 @@
 # Travel
 Solution to the Salesman's Travel codingkata
+
 Trello board: https://trello.com/b/DQLtbQzF/travel
 
 Client's address e.g. "432 Main Long Road St. Louisville OH 43071" as a list.
