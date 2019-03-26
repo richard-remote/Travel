@@ -95,7 +95,9 @@ public class Travel {
     listOfStreetNames = listOfStreetNames + streetName;
     testStatement = testStatement + "\nThe street names are " + listOfStreetNames +
      "\nThe street numbers are " + listOfStreetNumbers;
-    return testStatement;    
+    
+   //Use a do while loop for extracting data and adding to the list of street numbers and street names while the original list contains the zipcode 
+     return testStatement;    
    }
 
    
