@@ -37,12 +37,13 @@ travel(r, "NY 5643") --> "NY 5643:/"
 
 public class Travel { 
  public static void main (String[] args) { 
-  String addresses = "123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
+  String addresses = "123 Main Street St. Louisville OH 4307,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville OH 43071";
   String zipcode = "OH 43071";
   System.out.println(travel(addresses, zipcode));
  } 
 
  public static String travel(String r, String zipcode) {
+  String testStatement = "";
   //Confirm zipcode is of proper length 
    if (zipcode.length() != 8)
     return zipcode + ":/";
@@ -51,15 +52,14 @@ public class Travel {
   //Use a do while loop for extracting data and adding to the list of street numbers and street names while the original list contains the zipcode 
    if (r.contains(zipcode)) {
     do{ 
-     String address = "", testStatement = "", listOfStreetNumbers = "", listOfStreetNames = "";
+     String address = "", listOfStreetNumbers = "", listOfStreetNames = "";
 
   //See if the address is at the beginning of the list and remove the first address
      if (r.indexOf(zipcode) == r.indexOf(",") - 8){
       address = getAddress(1, r, zipcode);
-      System.out.println("Old list:" + r);
+      System.out.println("Old list: " + r);
       r = r.substring(address.length() + 1);
-      System.out.println("New list:" + r);
-      testStatement = "THE ZIPCODE IS IN THE FIRST ADDRESS.\n" + address;
+      System.out.println("New list: " + r);
      }
 
   //See if the address is at the end of the list and remove the last address
@@ -98,14 +98,14 @@ public class Travel {
     testStatement = testStatement + "\nThe street names are " + listOfStreetNames +
      "\nThe street numbers are " + listOfStreetNumbers;
     
-     return testStatement;  
     }while(r.contains(zipcode));
    }
 
    else {
-    System.out.println("Address is not here...");
-    return zipcode + ":/";
+    testStatement = "Address is not here...";
    }
+
+   return testStatement + "\n" + zipcode + ":/"; 
  }
  
 
