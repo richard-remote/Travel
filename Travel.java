@@ -43,7 +43,7 @@ public class Travel {
  } 
 
  public static String travel(String r, String zipcode) {
-  String testStatement = "";
+  String testStatement = "", address = "", listOfStreetNumbers = "", listOfStreetNames = "";
   //Confirm zipcode is of proper length 
    if (zipcode.length() != 8)
     return zipcode + ":/";
@@ -52,11 +52,12 @@ public class Travel {
   //Use a do while loop for extracting data and adding to the list of street numbers and street names while the original list contains the zipcode 
    if (r.contains(zipcode)) {
     do{ 
-     String address = "", listOfStreetNumbers = "", listOfStreetNames = "";
+     
 
   //See if the address is at the beginning of the list and remove the first address
      if (r.indexOf(zipcode) == r.indexOf(",") - 8){
       address = getAddress(1, r, zipcode);
+
       System.out.println("Old list: " + r);
       r = r.substring(address.length() + 1);
       System.out.println("New list: " + r);
@@ -66,23 +67,21 @@ public class Travel {
      else if ((r.indexOf(zipcode) == r.length() - 8) && (r.charAt(r.length() - 1) != ',')){
       address = getAddress(3, r, zipcode);
 
-      System.out.println("Old list:" + r);
+      System.out.println("Old list: " + r);
       r = r.substring(0, (r.indexOf(address) - 1));
-      System.out.println("New list:" + r);
-      testStatement = "THE ZIPCODE IS IN THE LAST ADDRESS.\n" + address;
+      System.out.println("New list: " + r);
     }
 
   //See if the address is in the middle of the list and remove it
     else {
      String beforeAddress = "", afterAddress = "";
      address = getAddress(2, r, zipcode);
+
      beforeAddress = r.substring(0, (r.indexOf(address) - 1));
      afterAddress =r.substring(r.indexOf(address) + address.length());
-     System.out.println("Old list:" + r);
+     System.out.println("Old list: " + r);
      r = (beforeAddress + afterAddress);
-     System.out.println("New list:" + r);
-
-     testStatement = "THE ZIPCODE IS IN THE MIDDLE ADDRESS\n" + address;
+     System.out.println("New list: " + r);
     }
 
   //Get the street number and street name of the address
