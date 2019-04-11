@@ -43,7 +43,7 @@ public class Travel {
  } 
 
  public static String travel(String r, String zipcode) {
-  String testStatement = "", address = "", listOfStreetNumbers = "", listOfStreetNames = "";
+  String finalList = "", address = "", listOfStreetNumbers = "", listOfStreetNames = "";
   //Confirm zipcode is of proper length 
    if (zipcode.length() != 8)
     return zipcode + ":/";
@@ -79,30 +79,26 @@ public class Travel {
   //Get the street number and street name of the address
     String streetNumber = getStreetNumber(address);
     String streetName = address.substring((streetNumber.length() + 1), (address.indexOf(zipcode) - 1));
-
-    testStatement = testStatement + "\nThe Street Number is " + streetNumber + 
-     "\nThe Street Name is " + streetName;
     
   //If the new list is not empty, add a comma before adding the street number/name
      if (listOfStreetNumbers.length() != 0)
       listOfStreetNumbers = listOfStreetNumbers + ",";
      if (listOfStreetNames.length() != 0)
       listOfStreetNames = listOfStreetNames + ",";
-    
+
   //Append the street number and street name to the new lists
     listOfStreetNumbers = listOfStreetNumbers + streetNumber;
     listOfStreetNames = listOfStreetNames + streetName;
-    testStatement = testStatement + "\nThe street names are " + listOfStreetNames +
-     "\nThe street numbers are " + listOfStreetNumbers;
     
     }while(r.contains(zipcode));
    }
 
    else {
-    testStatement = "Address is not here...";
+    finalList = zipcode + ":/";
    }
-
-   return testStatement + "\n" + zipcode + ":/"; 
+   
+   finalList = zipcode + listOfStreetNames + "/" + listOfStreetNumbers;
+   return finalList;
  }
  
 
