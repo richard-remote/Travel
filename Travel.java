@@ -57,19 +57,13 @@ public class Travel {
   //See if the address is at the beginning of the list and remove the first address
      if (r.indexOf(zipcode) == r.indexOf(",") - 8){
       address = getAddress(1, r, zipcode);
-
-      System.out.println("Old list: " + r);
       r = r.substring(address.length() + 1);
-      System.out.println("New list: " + r);
      }
 
   //See if the address is at the end of the list and remove the last address
      else if ((r.indexOf(zipcode) == r.length() - 8) && (r.charAt(r.length() - 1) != ',')){
       address = getAddress(3, r, zipcode);
-
-      System.out.println("Old list: " + r);
       r = r.substring(0, (r.indexOf(address) - 1));
-      System.out.println("New list: " + r);
     }
 
   //See if the address is in the middle of the list and remove it
@@ -79,9 +73,7 @@ public class Travel {
 
      beforeAddress = r.substring(0, (r.indexOf(address) - 1));
      afterAddress =r.substring(r.indexOf(address) + address.length());
-     System.out.println("Old list: " + r);
      r = (beforeAddress + afterAddress);
-     System.out.println("New list: " + r);
     }
 
   //Get the street number and street name of the address
@@ -92,6 +84,12 @@ public class Travel {
      "\nThe Street Name is " + streetName;
     
   //Append the street number and street name to the new lists
+     //If the new list is not empty, add a comma before adding the street number/name
+     if (listOfStreetNumbers.length() != 0)
+      listOfStreetNumbers = listOfStreetNumbers + ",";
+     if (listOfStreetNames.length() != 0)
+      listOfStreetNames = listOfStreetNames + ",";
+    
     listOfStreetNumbers = listOfStreetNumbers + streetNumber;
     listOfStreetNames = listOfStreetNames + streetName;
     testStatement = testStatement + "\nThe street names are " + listOfStreetNames +
