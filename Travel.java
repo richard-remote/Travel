@@ -83,13 +83,13 @@ public class Travel {
     testStatement = testStatement + "\nThe Street Number is " + streetNumber + 
      "\nThe Street Name is " + streetName;
     
-  //Append the street number and street name to the new lists
-     //If the new list is not empty, add a comma before adding the street number/name
+  //If the new list is not empty, add a comma before adding the street number/name
      if (listOfStreetNumbers.length() != 0)
       listOfStreetNumbers = listOfStreetNumbers + ",";
      if (listOfStreetNames.length() != 0)
       listOfStreetNames = listOfStreetNames + ",";
     
+  //Append the street number and street name to the new lists
     listOfStreetNumbers = listOfStreetNumbers + streetNumber;
     listOfStreetNames = listOfStreetNames + streetName;
     testStatement = testStatement + "\nThe street names are " + listOfStreetNames +
