@@ -92,6 +92,7 @@ public class Travel {
      "\nThe Street Name is " + streetName;
     
   //Append the street number and street name to the new lists
+    System.out.println("\t\t\t" + listOfStreetNumbers.length());
     listOfStreetNumbers = listOfStreetNumbers + streetNumber;
     listOfStreetNames = listOfStreetNames + streetName;
     testStatement = testStatement + "\nThe street names are " + listOfStreetNames +
