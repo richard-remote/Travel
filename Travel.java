@@ -37,73 +37,69 @@ travel(r, "NY 5643") --> "NY 5643:/"
 
 public class Travel { 
  public static void main (String[] args) { 
-  String addresses = "123 Main Street St. Louisville OH 43072,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432";
-  String zipcode = "NY 56432";
+  String addresses = "123 Main Street St. Louisville OH 4307,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville OH 43071";
+  String zipcode = "OH 43071";
   System.out.println(travel(addresses, zipcode));
  } 
 
  public static String travel(String r, String zipcode) {
+  String finalList = "", address = "", listOfStreetNumbers = "", listOfStreetNames = "";
   //Confirm zipcode is of proper length 
    if (zipcode.length() != 8)
     return zipcode + ":/";
 
   //Confirm zipcode is in the list r
+  //Use a do while loop for extracting data and adding to the list of street numbers and street names while the original list contains the zipcode 
    if (r.contains(zipcode)) {
-    String address = "", testStatement = "", listOfStreetNumbers = "", listOfStreetNames = "";
+    do{ 
+     
 
   //See if the address is at the beginning of the list and remove the first address
-    if (r.indexOf(zipcode) == r.indexOf(",") - 8){
-     address = getAddress(1, r, zipcode);
-     System.out.println("Old list:" + r);
-     r = r.substring(address.length() + 1);
-     System.out.println("New list:" + r);
-     testStatement = "THE ZIPCODE IS IN THE FIRST ADDRESS.\n" + address;
-    }
+     if (r.indexOf(zipcode) == r.indexOf(",") - 8){
+      address = getAddress(1, r, zipcode);
+      r = r.substring(address.length() + 1);
+     }
 
   //See if the address is at the end of the list and remove the last address
-    else if ((r.indexOf(zipcode) == r.length() - 8) && (r.charAt(r.length() - 1) != ',')){
+     else if ((r.indexOf(zipcode) == r.length() - 8) && (r.charAt(r.length() - 1) != ',')){
       address = getAddress(3, r, zipcode);
-
-      System.out.println("Old list:" + r);
       r = r.substring(0, (r.indexOf(address) - 1));
-      System.out.println("New list:" + r);
-      testStatement = "THE ZIPCODE IS IN THE LAST ADDRESS.\n" + address;
     }
 
   //See if the address is in the middle of the list and remove it
     else {
-      String beforeAddress = "", afterAddress = "";
-      address = getAddress(2, r, zipcode);
-      beforeAddress = r.substring(0, (r.indexOf(address) - 1));
-      afterAddress =r.substring(r.indexOf(address) + address.length());
-      System.out.println("Old list:" + r);
-      r = (beforeAddress + afterAddress);
-      System.out.println("New list:" + r);
+     String beforeAddress = "", afterAddress = "";
+     address = getAddress(2, r, zipcode);
 
-      testStatement = "THE ZIPCODE IS IN THE MIDDLE ADDRESS\n" + address;
+     beforeAddress = r.substring(0, (r.indexOf(address) - 1));
+     afterAddress =r.substring(r.indexOf(address) + address.length());
+     r = (beforeAddress + afterAddress);
     }
 
-   //Get the street number and street name of the address
+  //Get the street number and street name of the address
     String streetNumber = getStreetNumber(address);
     String streetName = address.substring((streetNumber.length() + 1), (address.indexOf(zipcode) - 1));
-
-    testStatement = testStatement + "\nThe Street Number is " + streetNumber + 
-     "\nThe Street Name is " + streetName;
     
-   //Append the street number and street name to the new lists
+  //If the new list is not empty, add a comma before adding the street number/name
+     if (listOfStreetNumbers.length() != 0)
+      listOfStreetNumbers = listOfStreetNumbers + ",";
+     if (listOfStreetNames.length() != 0)
+      listOfStreetNames = listOfStreetNames + ",";
+
+  //Append the street number and street name to the new lists
     listOfStreetNumbers = listOfStreetNumbers + streetNumber;
     listOfStreetNames = listOfStreetNames + streetName;
-    testStatement = testStatement + "\nThe street names are " + listOfStreetNames +
-     "\nThe street numbers are " + listOfStreetNumbers;
-    return testStatement;    
+    
+    }while(r.contains(zipcode));
    }
 
-   
    else {
-    System.out.println("Address is not here...");
-    return zipcode + ":/";
+    finalList = zipcode + ":/";
    }
-  }
+   
+   finalList = zipcode + listOfStreetNames + "/" + listOfStreetNumbers;
+   return finalList;
+ }
  
 
  public static String getAddress (int option, String list, String zipcode){
