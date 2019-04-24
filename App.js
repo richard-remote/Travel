@@ -1,3 +1,16 @@
+/*
+
+const AppContainer = createAppContainer(AppNavigator);
+
+export default class App extends React.Component {
+  render() {
+    return <AppContainer />;
+  }
+}
+
+export default createAppContainer(AppNavigator);
+*/
+
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -8,6 +21,7 @@
 
 import React, {Component} from 'react';
 import {Button, Platform, StyleSheet, Text, View} from 'react-native';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -15,6 +29,36 @@ const instructions = Platform.select({
     'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
+/*
+const MainNavigator = createStackNavigator({
+  Home: {screen: HomeScreen},
+  Profile: {screen: ProfileScreen},
+});
+
+const App = createAppContainer(MainNavigator);
+
+export default App;
+*/
+
+class HomeScreen extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Text>Home Screen</Text>
+      </View>
+    );
+  }
+}
+
+class DetailsScreen extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Text>Details Screen</Text>
+      </View>
+    );
+  }
+}
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -38,7 +82,17 @@ export default class App extends Component<Props> {
   }
 }
 
-
+/***** 
+ * CAUSE OF CURRENT BUG SAYS null is not an object. Something with gesture handling
+const AppNavigator = createStackNavigator({
+    Home: {
+      screen: HomeScreen,
+    },
+    Details: {
+      screen: DetailsScreen,
+    }
+});
+******/
 
 const styles = StyleSheet.create({
   top_container: {
@@ -69,6 +123,5 @@ const styles = StyleSheet.create({
     margin: 10,
     color: '#FFFFFF',
   },
-  
-  
+    
 });
