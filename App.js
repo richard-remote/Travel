@@ -1,15 +1,40 @@
-/*
+import React, {Component} from 'react';
+import {Alert, AppRegistry, BackHandler, Button, Platform, StyleSheet, Text, View} from 'react-native';
 
-const AppContainer = createAppContainer(AppNavigator);
+//5/22/19 - No clue what these are just yet. I'll keep em commented out
+//          I added flexboxes to display layouts for the exit link, title, and links
+//          I added an exit button in the top flexbox
+//          I'm adding styled text for the title
+//import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-export default class App extends React.Component {
+export default class App extends Component {
+  _onPressButton(){
+    BackHandler.exitApp();
+  }
+
   render() {
-    return <AppContainer />;
+    return (
+      <View style= {{flex: 1}}>
+        <View style= {{flex: 1, flexDirection: 'row', backgroundColor: 'green'}}>
+          <Button 
+            onPress={this._onPressButton}
+            title='EXIT'
+          />
+        </View>
+
+        <View style= {{flex: 2, backgroundColor: 'yellow'}}>
+          <Text>Salesman's Travel</Text>
+        </View>
+        <View style= {{flex: 2, backgroundColor: 'black'}}></View>
+      </View>
+    );
   }
 }
 
+/* 5/22/19 - A whooooole lotta mess down here. I'll clean it up as I go along.
+             For now, I just want the bare bones skeleton
 export default createAppContainer(AppNavigator);
-*/
+
 
 /**
  * Sample React Native App
@@ -19,16 +44,9 @@ export default createAppContainer(AppNavigator);
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Button, Platform, StyleSheet, Text, View} from 'react-native';
-import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+
+
 /*
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
@@ -39,7 +57,7 @@ const App = createAppContainer(MainNavigator);
 
 export default App;
 */
-
+/*
 class HomeScreen extends Component {
   render() {
     return (
@@ -78,10 +96,10 @@ export default class App extends Component<Props> {
         <Text style={styles.search_zipcode}>Search zip code</Text>
       </View>
       */
-    );
+    /*);
   }
 }
-
+*/
 /***** 
  * CAUSE OF CURRENT BUG SAYS null is not an object. Something with gesture handling
 const AppNavigator = createStackNavigator({
@@ -93,7 +111,7 @@ const AppNavigator = createStackNavigator({
     }
 });
 ******/
-
+/*
 const styles = StyleSheet.create({
   top_container: {
     flex: 1,
@@ -125,3 +143,5 @@ const styles = StyleSheet.create({
   },
     
 });
+
+*/
