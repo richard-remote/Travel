@@ -4,7 +4,8 @@ import {Alert, AppRegistry, BackHandler, Button, Platform, StyleSheet, Text, Vie
 //5/22/19 - No clue what these are just yet. I'll keep em commented out
 //          I added flexboxes to display layouts for the exit link, title, and links
 //          I added an exit button in the top flexbox
-//          I'm adding styled text for the title
+//          
+//5/31/19 - I added bold, black styled text for the title
 //import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 export default class App extends Component {
@@ -23,7 +24,7 @@ export default class App extends Component {
         </View>
 
         <View style= {{flex: 2, backgroundColor: 'yellow'}}>
-          <Text>Salesman's Travel</Text>
+          <Text style={{fontSize: 30, fontWeight: 'bold', color: 'black'}}>Salesman's Travel</Text>
         </View>
         <View style= {{flex: 2, backgroundColor: 'black'}}></View>
       </View>
