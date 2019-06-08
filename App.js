@@ -6,6 +6,7 @@ import {Alert, AppRegistry, BackHandler, Button, Platform, StyleSheet, Text, Vie
 //          I added an exit button in the top flexbox
 //          I'm adding styled text for the title
 //import {createStackNavigator, createAppContainer} from 'react-navigation';
+//Hey look at me! I'm a line of text
 
 export default class App extends Component {
   _onPressButton(){
