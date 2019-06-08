@@ -7,6 +7,7 @@ import {Alert, AppRegistry, BackHandler, Button, Platform, StyleSheet, Text, Vie
 //          
 //5/31/19 - I added bold, black styled text for the title
 //import {createStackNavigator, createAppContainer} from 'react-navigation';
+//My bigtext brings all the code to the yard :)
 
 export default class App extends Component {
   _onPressButton(){
