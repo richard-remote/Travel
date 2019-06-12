@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/richyad/Documents/workspace/Travel/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
+            "outputFile": "/Users/RClarke/Documents/workspace/geethab/Travel/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/home/richyad/.gradle/caches/transforms-2/files-2.1/01a52d035346bb824673150c4e09da32/res/values-v23/values-v23.xml",
+                    "source": "/Users/RClarke/.gradle/caches/transforms-2/files-2.1/554a581d968eeeb241b8a32a6b1a413f/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

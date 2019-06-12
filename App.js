@@ -25,7 +25,7 @@ export default class App extends Component {
         </View>
 
         <View style= {{flex: 2, backgroundColor: 'yellow'}}>
-          <Text style={{fontSize: 30, fontWeight: 'bold', color: 'black'}}>Salesman's Travel</Text>
+          <Text style={{fontSize: 50, fontWeight: 'bold', color: 'black'}}>Salesman's Travel</Text>
         </View>
         <View style= {{flex: 2, backgroundColor: 'black'}}></View>
       </View>

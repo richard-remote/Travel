@@ -87,6 +87,7 @@ public class Travel {
       listOfStreetNames = listOfStreetNames + ",";
 
   //Append the street number and street name to the new lists
+    System.out.println("\t\t\t" + listOfStreetNumbers.length());
     listOfStreetNumbers = listOfStreetNumbers + streetNumber;
     listOfStreetNames = listOfStreetNames + streetName;
     
