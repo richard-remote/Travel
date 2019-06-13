@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Jun 08 15:11:53 EDT 2019
+#Sun Jun 09 17:58:08 EDT 2019
 23.set=NATIVE_RESOURCE
 31.set=NATIVE_RESOURCE
 33.base=/home/richyad/Documents/workspace/Travel/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
