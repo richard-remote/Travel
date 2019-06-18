@@ -12,7 +12,7 @@ import {createAppContainer, createStackNavigator} from 'react-navigation';
 //6/18/19 - Installed react-navigation and react-native-gesture-handler
 //        - Created two Components: HomeScreen and ViewList
 //        - Created a stack navigator with three routes: HomeScreen, ViewList, and SearchList
-//        - Set the home route to the HomeScreen
+//        - Set the home route to the HomeScreen 
 
 /**Home Screen Component */
 class HomeScreen extends Component {
