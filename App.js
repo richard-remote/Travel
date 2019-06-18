@@ -11,9 +11,8 @@ import {createAppContainer, createStackNavigator} from 'react-navigation';
 //6/13/19 - Aligned the Title and View List option and removed the exit button
 //6/18/19 - Installed react-navigation and react-native-gesture-handler
 //        - Created two Components: HomeScreen and ViewList
-//        - Created a stack navigator with two routes: HomeScreen, and ViewList
+//        - Created a stack navigator with three routes: HomeScreen, ViewList, and SearchList
 //        - Set the home route to the HomeScreen
-//        - 
 
 /**Home Screen Component */
 class HomeScreen extends Component {
@@ -30,7 +29,8 @@ class HomeScreen extends Component {
         <View style= {{flex: 3, backgroundColor: 'yellow'}}>
           <Text style={{fontSize: 30, fontWeight: 'bold', color: 'green', textAlign: "center"}}
             onPress= {()=> this.props.navigation.navigate('ViewList')}>View List</Text>
-          <Text style={{fontSize: 30, fontWeight: 'bold', color: 'green', textAlign: 'center'}}>Search List</Text>
+          <Text style={{fontSize: 30, fontWeight: 'bold', color: 'green', textAlign: 'center'}}
+            onPress= {()=> this.props.navigation.navigate('SearchList')}>Search List</Text>
         </View>
       </View>
       
@@ -47,12 +47,21 @@ class ViewList extends Component{
   }
 }
 
+class SearchList extends Component{
+  render(){
+    return(
+      <View></View>
+    );
+  }
+}
+
 //Exports the root stack navigator
 //Two routes: Home and Details
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
-    ViewList: ViewList
+    ViewList: ViewList,
+    SearchList: SearchList
   },
   {
     backgroundColor: '#FFFF00',
