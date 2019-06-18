@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/richyad/Documents/workspace/Travel/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "/Users/RClarke/Documents/workspace/geethab/Travel/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/home/richyad/.gradle/caches/transforms-2/files-2.1/181e2560630c49f829056243baf272a2/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
-                {
-                    "source": "/home/richyad/.gradle/caches/transforms-2/files-2.1/01a52d035346bb824673150c4e09da32/res/values-v16/values-v16.xml",
+                    "source": "/Users/RClarke/.gradle/caches/transforms-2/files-2.1/554a581d968eeeb241b8a32a6b1a413f/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -30,6 +20,16 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "/Users/RClarke/.gradle/caches/transforms-2/files-2.1/6ae477a1597a1b387260e19337fe6af3/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
                     }
                 }
             ]
