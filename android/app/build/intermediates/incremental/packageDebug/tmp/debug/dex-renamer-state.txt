@@ -1,4 +1,4 @@
-#Wed Jun 12 16:20:40 EDT 2019
+#Tue Jun 18 12:45:54 EDT 2019
 base.0=/Users/RClarke/Documents/workspace/geethab/Travel/android/app/build/intermediates/transforms/dexMerger/debug/0
 renamed.0=classes.dex
 path.0=classes.dex

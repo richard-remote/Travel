@@ -5,6 +5,7 @@ INJECTED from /Users/RClarke/Documents/workspace/geethab/Travel/android/app/src/
 INJECTED from /Users/RClarke/Documents/workspace/geethab/Travel/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /Users/RClarke/Documents/workspace/geethab/Travel/android/app/src/main/AndroidManifest.xml:1:1-26:12
 MERGED from /Users/RClarke/Documents/workspace/geethab/Travel/android/app/src/main/AndroidManifest.xml:1:1-26:12
+MERGED from [:react-native-gesture-handler] /Users/RClarke/Documents/workspace/geethab/Travel/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.59.9] /Users/RClarke/.gradle/caches/transforms-2/files-2.1/544b97394533900832753e3d7cfd0cba/AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/RClarke/.gradle/caches/transforms-2/files-2.1/554a581d968eeeb241b8a32a6b1a413f/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:28.0.0] /Users/RClarke/.gradle/caches/transforms-2/files-2.1/3f76e7f77f236a28a24c0af101279cdc/AndroidManifest.xml:17:1-22:12
@@ -129,6 +130,8 @@ uses-sdk
 INJECTED from /Users/RClarke/Documents/workspace/geethab/Travel/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/RClarke/Documents/workspace/geethab/Travel/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/RClarke/Documents/workspace/geethab/Travel/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-gesture-handler] /Users/RClarke/Documents/workspace/geethab/Travel/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /Users/RClarke/Documents/workspace/geethab/Travel/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.59.9] /Users/RClarke/.gradle/caches/transforms-2/files-2.1/544b97394533900832753e3d7cfd0cba/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.59.9] /Users/RClarke/.gradle/caches/transforms-2/files-2.1/544b97394533900832753e3d7cfd0cba/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/RClarke/.gradle/caches/transforms-2/files-2.1/554a581d968eeeb241b8a32a6b1a413f/AndroidManifest.xml:20:5-44
