@@ -45,14 +45,15 @@ class HomeScreen extends Component {
 class ViewList extends Component{
   render(){
     return(
-      <FlatList
+      <FlatList style= {{backgroundColor: 'yellow'}}
       //Each key adds to the source of information on the list
         data={[
           {key: '123 Main Street St. Louisville OH 4307'},
           {key: '432 Main Long Road St. Louisville OH 43071'},
           {key: '786 High Street Pollocksville OH 43071'},
         ]}
-  renderItem={({item}) => <Text>{item.key}</Text>}
+        
+        renderItem={({item}) => <Text style= {{color: 'green'}}>{item.key}</Text>}
       />
     );
   }
