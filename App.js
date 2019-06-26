@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, FlatList} from 'react-native';
 import {createAppContainer, createStackNavigator} from 'react-navigation';
 
 //5/22/19 - No clue what these are just yet. I'll keep em commented out
@@ -13,6 +13,9 @@ import {createAppContainer, createStackNavigator} from 'react-navigation';
 //        - Created two Components: HomeScreen and ViewList
 //        - Created a stack navigator with three routes: HomeScreen, ViewList, and SearchList
 //        - Set the home route to the HomeScreen 
+
+//6/26/19 - Imported FlatList
+//        - Added the addresses on the View List screen as a FlatList
 
 /**Home Screen Component */
 class HomeScreen extends Component {
@@ -42,7 +45,15 @@ class HomeScreen extends Component {
 class ViewList extends Component{
   render(){
     return(
-      <View></View>
+      <FlatList
+      //Each key adds to the source of information on the list
+        data={[
+          {key: '123 Main Street St. Louisville OH 4307'},
+          {key: '432 Main Long Road St. Louisville OH 43071'},
+          {key: '786 High Street Pollocksville OH 43071'},
+        ]}
+  renderItem={({item}) => <Text>{item.key}</Text>}
+      />
     );
   }
 }
@@ -82,17 +93,6 @@ export default class App extends Component{
 export default createAppContainer(AppNavigator);
 
 
-
-/*
-const MainNavigator = createStackNavigator({
-  Home: {screen: HomeScreen},
-  Profile: {screen: ProfileScreen},
-});
-
-const App = createAppContainer(MainNavigator);
-
-export default App;
-*/
 /*
 class HomeScreen extends Component {
   render() {
