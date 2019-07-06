@@ -10,48 +10,51 @@ import {Alert, AppRegistry, BackHandler, Button, Platform, StyleSheet, Text, Vie
 //6/13/19 - Aligned the Title and View List option and removed the exit button
 //import {createStackNavigator, createAppContainer} from 'react-navigation';
 
+export default class App extends Component{
+    render () {
+      return (
+        <View style={styles.parent}>
+        
+          <View style= {styles.title}>
+            <Text style={{fontSize: 50, fontWeight: 'bold', color: 'green', textAlign: "center"}}>Salesman's Travel</Text>
+          </View>
 
-export default class App extends Component {
-  _onPressButton(){
-    BackHandler.exitApp();
-  }
+          <View style={styles.options}>
+            <Text style={{fontSize: 30, fontWeight: 'bold', color: 'yellow', textAlign: "center"}}>View List</Text>
+            <Text style={{fontSize: 30, fontWeight: 'bold', color: 'yellow', textAlign: 'center'}}>Search List</Text>
+          </View>
 
-  render() {
-    return (
-      /**ooooooo */
-
-      <View style= {{flex: 1}}>
-        <View style= {{flex: 1, flexDirection: 'row', backgroundColor: 'yellow'}}>
+          <View style={styles.footer}>
+          </View>
           
-
-          <Text style={{fontSize: 50, fontWeight: 'bold', color: 'black', textAlign: "center"}}>Salesman's Travel</Text>
         </View>
-
-        <View style= {{flex: 2, backgroundColor: 'yellow'}}>
-          
-          <Text style={{fontSize: 30, fontWeight: 'bold', color: 'green', textAlign: "center"}}>View List</Text>
-          <Text style={{fontSize: 30, fontWeight: 'bold', color: 'green', textAlign: 'center'}}>Search List</Text>
-        </View>
-        <View style= {{flex: 2, backgroundColor: 'yellow'}}></View>
-      </View>
-      
-    );
-  }
+      );
+    }
 }
 
-/* 5/22/19 - A whooooole lotta mess down here. I'll clean it up as I go along.
-             For now, I just want the bare bones skeleton
-export default createAppContainer(AppNavigator);
+const styles = StyleSheet.create({
+  parent: {
+    flex: 1,
+  },
 
+  title: {
+    flex: 2,
+    backgroundColor: '#000000',
+  },
 
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+  options: {
+    flex: 1,
+    backgroundColor: '#000000',
+  },
 
+  footer: {
+    flex: 2,
+    backgroundColor: '#000000'
+  },
+
+  
+
+});
 
 
 
