@@ -8,6 +8,10 @@ import {Alert, AppRegistry, BackHandler, Button, Platform, StyleSheet, Text, Vie
 //5/31/19 - I added bold, black styled text for the title
 
 //6/13/19 - Aligned the Title and View List option and removed the exit button
+//7/5/19   Styled with a black background
+//         Green title
+//         Yellow options
+
 //import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 export default class App extends Component{
