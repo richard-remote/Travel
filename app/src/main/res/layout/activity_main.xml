@@ -9,7 +9,7 @@ Added proper text to TextViews
 
 Styling
 Aligned the TextViews vertically/centered
-Set text colors, sizes, and wights
+Set text colors, sizes, and weights
 Centered the options
 **
 android:gravity attribute can center x/y within the view while layout_gravity is within the layout
