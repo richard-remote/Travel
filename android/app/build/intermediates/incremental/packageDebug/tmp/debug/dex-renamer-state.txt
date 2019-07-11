@@ -1,4 +1,0 @@
-#Sun Jun 09 17:58:08 EDT 2019
-base.0=/home/richyad/Documents/workspace/Travel/android/app/build/intermediates/transforms/dexMerger/debug/0
-renamed.0=classes.dex
-path.0=classes.dex
