@@ -1,22 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-7/11
-Components
-Added the LinearLayout
-Added the TextViews for the Title and Options
-Added proper text to TextViews
-*Removed the Search List option from the TextView. It should have its own TextView so it can call
- the onClick() function independently.
-
-Styling
-Aligned the TextViews vertically/centered
-Set text colors, sizes, and weights
-Centered the options
-**
-android:gravity attribute can center x/y within the view while layout_gravity is within the layout
--->
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -28,35 +10,26 @@ android:gravity attribute can center x/y within the view while layout_gravity is
     tools:context=".MainActivity">
 
     <TextView
-        android:background="#222222"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Salesman's Travel"
-        android:textAlignment="center"
-        android:textColor="#007700"
-        android:textSize="25pt"
-     />
-
-    <TextView
+        android:background="#FF0000"
         android:gravity="center"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_width="wrap_content"
+        android:onClick="press"
         android:text="View List"
-        android:textAlignment="center"
-        android:textColor="#FFFF00"
-        android:textSize="20pt"
-     />
+        android:textColor="#FFFF00" 
+        android:textSize="20pt"/>
 
     <TextView
-        android:background="#FF0000"
+        android:background="#007700"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_width="wrap_content"
-        android:text="LAST OPTION"
-        />
-
+        android:onClick="press"
+        android:text="Search List"
+        android:textColor="#FFFF00"
+        android:textSize="20pt" />
+    
 </LinearLayout>
