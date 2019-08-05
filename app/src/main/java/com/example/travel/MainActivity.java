@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         else if (text.equals("Search List")) {
             //Create an Intent using the SearchAddresses class
-            intent = new Intent(this, SearchAddresses.class);
+            intent = new Intent(this, Search_Results.class);
             startActivity(intent);
         }
     }
