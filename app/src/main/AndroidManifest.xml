@@ -16,12 +16,12 @@
             </intent-filter>
         </activity>
 
-        <activity 
-            android:name=".ListAddresses"
+        <activity
+            android:name=".List_Addresses"
             android:parentActivityName=".MainActivity">
         </activity>
 
-        <activity 
+        <activity
             android:name=".Search_Results"
             android:parentActivityName=".MainActivity">
         </activity>

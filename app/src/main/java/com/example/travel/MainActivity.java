@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (text.equals("View List")) {
             //Create an Intent using the ListAddresses class
-            intent = new Intent(this, ListAddresses.class);
+            intent = new Intent(this, List_Addresses.class);
             startActivity(intent);
         }
 
