@@ -9,6 +9,6 @@ public class Search_Results extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search);
-        getSupportActionBar().setTitle("Results");
+        getSupportActionBar().setTitle("Search Zipcode");
     }
 }

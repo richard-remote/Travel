@@ -34,26 +34,28 @@ travel(r, "NY 56432") --> "NY 56432:High Street Pollocksville/786"
 
 travel(r, "NY 5643") --> "NY 5643:/"
 */
+import java.util.ArrayList;
 
 public class Travel { 
  public static void main (String[] args) { 
   String addresses = "123 Main Street St. Louisville OH 4307,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville OH 43071";
   String zipcode = "OH 43071";
-  System.out.println(travel(addresses, zipcode));
+  travel(addresses, zipcode);
  } 
 
- public static String travel(String r, String zipcode) {
-  String finalList = "", address = "", listOfStreetNumbers = "", listOfStreetNames = "";
+ public static void travel(String r, String zipcode) {
+  ArrayList<String> showMe = new ArrayList<>();
+  String address = "";
+  ;
   //Confirm zipcode is of proper length 
    if (zipcode.length() != 8)
-    return zipcode + ":/";
+    System.out.println(zipcode + ":/");
 
   //Confirm zipcode is in the list r
   //Use a do while loop for extracting data and adding to the list of street numbers and street names while the original list contains the zipcode 
    if (r.contains(zipcode)) {
     do{ 
      
-
   //See if the address is at the beginning of the list and remove the first address
      if (r.indexOf(zipcode) == r.indexOf(",") - 8){
       address = getAddress(1, r, zipcode);
@@ -80,26 +82,16 @@ public class Travel {
     String streetNumber = getStreetNumber(address);
     String streetName = address.substring((streetNumber.length() + 1), (address.indexOf(zipcode) - 1));
     
-  //If the new list is not empty, add a comma before adding the street number/name
-     if (listOfStreetNumbers.length() != 0)
-      listOfStreetNumbers = listOfStreetNumbers + ",";
-     if (listOfStreetNames.length() != 0)
-      listOfStreetNames = listOfStreetNames + ",";
-
-  //Append the street number and street name to the new lists
-    System.out.println("\t\t\t" + listOfStreetNumbers.length());
-    listOfStreetNumbers = listOfStreetNumbers + streetNumber;
-    listOfStreetNames = listOfStreetNames + streetName;
-    
+    showMe.add(streetNumber + "\n" + streetName);    
     }while(r.contains(zipcode));
    }
 
    else {
-    finalList = zipcode + ":/";
+    showMe.add("NO RESULTS");
    }
    
-   finalList = zipcode + listOfStreetNames + "/" + listOfStreetNumbers;
-   return finalList;
+    System.out.println(showMe.size());
+    showMe.forEach(addy -> System.out.println(addy + "\n\n"));
  }
  
 
