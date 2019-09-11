@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.TextView;
 import android.view.View;
+import android.widget.TextView;
 
 
 
@@ -13,6 +13,7 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity {
     Intent intent;
     String text;
+    TextView textViewViewList, textViewSearchList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,27 +23,26 @@ public class MainActivity extends AppCompatActivity {
         //Style the ActionBar using a custom layout
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.mainactivity_action_bar);
-    }
 
-    public void press(View View){
-        //Cast the View object as a TextView
-        //Use the getText() getter method to obtain the text in the TextView
-        //Use the toString() method to return the text as a String
-        //If the String equals "View List", create an Intent for starting the ListAddresses Activity
-        //Else, if the String equals "Search List", create an Intent for starting the SearchAddresses Activity
-        
-        text = ((TextView) View).getText().toString();
+        //Instantiate Button objects using the id in activity_main.xml
+        textViewViewList = findViewById(R.id.viewList);
+        textViewSearchList= findViewById(R.id.searchList);
 
-        if (text.equals("View List")) {
-            //Create an Intent using the ListAddresses class
-            intent = new Intent(this, List_Addresses.class);
-            startActivity(intent);
-        }
+        textViewViewList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(MainActivity.this, List_Addresses.class);
+                startActivity(intent);
+            }
+        });
 
-        else if (text.equals("Search List")) {
-            //Create an Intent using the SearchAddresses class
-            intent = new Intent(this, Search_Results.class);
-            startActivity(intent);
-        }
+        textViewSearchList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(MainActivity.this, Search_Results.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
