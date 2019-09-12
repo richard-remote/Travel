@@ -9,6 +9,6 @@ public class List_Addresses extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list);
-        getSupportActionBar().setTitle("List of Addresses");
+        getSupportActionBar().setTitle("View List");
     }
 }
