@@ -26,7 +26,11 @@ public class Test_Dialog extends AppCompatDialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
         //Inflate the View using the layout for the AlertDialog
+<<<<<<< HEAD
         View view = inflater.inflate(R.layout.layout_dialogbox,null);
+=======
+        View view = inflater.inflate(R.layout., null);
+>>>>>>> ba7020028c45d84cbf7f8a16480d4768ddd725b4
 
         //EditText and Button Objects for the Views in the layout
         editTextInput = view.findViewById(R.id.input);
@@ -81,4 +85,8 @@ public class Test_Dialog extends AppCompatDialogFragment {
     public interface ExampleDialogListeners {
         void applyTexts(String input);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ba7020028c45d84cbf7f8a16480d4768ddd725b4
