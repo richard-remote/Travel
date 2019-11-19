@@ -5,4 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:textColorLink="#007700"
+        android:id="@+id/input"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ex: MA 02134"
+        android:textColorHint="#555555"
+        android:textColor="#FFFF00"/>
+
 </LinearLayout>

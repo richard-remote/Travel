@@ -40,7 +40,11 @@ public class List_Addresses extends AppCompatActivity {
         listview = findViewById(R.id.address_list);
         adapter = new ArrayAdapter<String>(this, R.layout.list_listview, addresses);
 
-        //7. Set the ArrayAdapter for the ListView    
+        //Updates the date in the adapter after making changes to the ArrayList containing addresses
+        //TODO Add an ArrayList which draws from the String array on each search
+        adapter.notifyDataSetChanged();
+
+        //7. Set the ArrayAdapter for the ListView
         listview.setAdapter(adapter);
     }
 }
